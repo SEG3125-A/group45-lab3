@@ -16,6 +16,7 @@
         document.getElementById("cart-count").innerText = parseInt(document.getElementById("cart-count").innerText) + 1
         localStorage.setItem("names", products);
         localStorage.setItem("prices", prices);
+        console.log(price)
     }
 </script>
 <body>
@@ -40,14 +41,21 @@
             </a>
         </div>
     </header>
+    
+
 
     <main class="content">
+        <div class="slider-container">
+            <input type="range" id="rangeSlider" min="5" max="15" value="15" step="0.25">
+            <div class="slider-value" id="sliderValue"> Price Range: $0-$15</div>
+        </div>
+    
         <p id="current-diet">Your Current Diet:</p>
         <section id="products">
         </section>
         <script src="scripts/products.js"></script>
     </main>
-    
+    <p class="signature">Website designed by Zanou Rih, Looti Kris and Jenson Wu</p>
 
 </body>
 </html>

@@ -253,3 +253,46 @@ article img {
     text-decoration: underline;
     font-weight: bold;
 }
+
+.slider-container {
+    width: 50%;
+    margin: 0 auto;
+  }
+
+  input[type="range"] {
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  .slider-value {
+    margin-top: 10px;
+    font-size: 18px;
+    text-align: center;
+  }
+
+  .signature {
+    text-align: center;
+    margin-top: 20px;
+    color: #888;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    align-items: center;
+  }
+  
+  td, th {
+    border: 1px solid #dddddd;
+    text-align:  center;
+    padding: 8px;
+    margin-left: 10px;
+  }
+  
+  tr:last-child {
+    background-color: #dddddd;
+  }

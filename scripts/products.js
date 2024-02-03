@@ -1,3 +1,4 @@
+
 function retrieveUserSelection() {
   const userSelection = localStorage.getItem("userSelection");
   return userSelection
@@ -8,6 +9,8 @@ function retrieveUserSelection() {
 async function displayArticles() {
   const { selectedDiet, selectedOrganic } = retrieveUserSelection();
   console.log(selectedDiet);
+
+  price = rangeSlider.value;
 
   const articlesContainer = document.getElementById("products");
   articlesContainer.innerHTML = ""; // Clear previous content
@@ -42,19 +45,21 @@ async function displayArticles() {
           }
         });
 
+        let currPrice = parseFloat(product.price.substring(1));
+
         // Check if the product matches the selected organic preference
         const matchesOrganicPreference =
           selectedOrganic === "All" || product.organic === selectedOrganic;
 
         // Display the product if it matches all selected diets and the organic preference
-        if (matchesSelectedDiets && matchesOrganicPreference) {
+        if (matchesSelectedDiets && matchesOrganicPreference && currPrice<=price) {
           const articleElement = document.createElement("article");
           articleElement.innerHTML = `
                       <img src="${product.image}" id="image">
                       <h2 id="name">${product.name}</h2>
                       <p id="description">${product.description}</p>
                       <p id="price">${product.price}</p>
-                      <button id="add-cart" onclick="addToCart()">Add to cart</button>
+                      <button id="add-cart" onclick="addToCart('${product.name}','${product.price}')">Add to cart</button>
                   `;
           articlesContainer.appendChild(articleElement);
         }
@@ -64,5 +69,13 @@ async function displayArticles() {
     console.error("Error loading JSON data:", error);
   }
 }
+
+var price;
+const rangeSlider = document.getElementById('rangeSlider');
+const sliderValue = document.getElementById('sliderValue');
+rangeSlider.addEventListener('input', () => {
+  sliderValue.textContent = "Price Range: $0-$"+rangeSlider.value;
+  displayArticles();
+});
 
 displayArticles();
