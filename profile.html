@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <script src="scripts/profile.js"></script>
+</head>
+<body>
+    <div class="navbar">
+        <h1>My Groceries</h1>
+
+        <div class="nav-links" id="navLinks">
+            <a href="profile.html">
+                <img src="icons/user.svg">
+                <p class="page">Profile</p>
+            </a>
+            <a href="products.html">
+                <img src="icons/store-alt.svg">
+                <p class="page">Products</p>
+            </a>
+            <a href="cart.html">
+                <div id="cart">
+                    <img src="icons/shopping-cart.svg">
+                    <p id="cart-count">0</p>
+                </div> 
+                <p class="page">Cart</p>
+            </a>
+        </div>
+    </div>
+
+    <div class="content" id="profile">
+        <div id="user-info">
+            <h1>User Information</h1>
+    
+            <div id="diet">
+                <p>Dietary restrictions or preferences? Please inform us.</p>
+                <label class="check"><input type="checkbox" value="Vegetarian"> Vegetarian</label><br>
+                <label class="check"><input type="checkbox" value="Lactose-free"> Lactose-Free</label><br>
+                <label class="check"><input type="checkbox" value="Gluten-Free"> Gluten-Free</label><br>
+                <label class="check"><input type="checkbox" value="None"> None</label><br>
+            </div>
+            
+            
+            <div id="organic"> 
+                <!-- Choose Organic or Non-Organic -->
+                <label for="organicSelect">Organic Preference:</label>
+                <br>
+                <select class="select" id="organicSelect" name="organicSelect">
+                    <option value="All">All</option>
+                    <option value="Organic">Organic</option>
+                    <option value="NonOrganic">Non-Organic</option>
+                </select>
+            </div>
+            
+            <div id="other">
+            <!-- Additional Dietary Restrictions or Concerns -->
+            <label for="userCharacteristics">Additional Dietary Restrictions or Concerns:</label>
+            <br>
+            <input class="select" type="text" id="userCharacteristics" name="userCharacteristics" placeholder="e.g., diabetic, lactose intolerant">
+            </div>
+    
+            <button id="bw" onclick="storeUserSelection()">Save changes</button>
+    
+        </div>
+    </div>
+
+
+    
+
+</body>
+</html>

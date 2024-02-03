@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <script src="scripts/script.js"></script>
+</head>
+<body>
+    <div class="navbar">
+        <h1>My Groceries</h1>
+
+        <div class="nav-links" id="navLinks">
+            <a href="profile.html">
+                <img src="icons/user.svg">
+                <p class="page">Profile</p>
+            </a>
+            <a href="products.html">
+                <img src="icons/store-alt.svg">
+                <p class="page">Products</p>
+            </a>
+            <a href="cart.html">
+                <div id="cart">
+                    <img src="icons/shopping-cart.svg">
+                    <p id="cart-count">0</p>
+                </div> 
+                <p class="page">Cart</p>
+            </a>
+        </div>
+    </div>
+
+    <div class="content" id="cart-page">
+        My Cart
+        <table id="productTable">
+            <tr>
+              <th>Product</th>
+              <th>Price</th>
+            </tr>  
+        </table>
+    </div>
+</body>
+<script src="scripts/cart.js"></script>
+</html>

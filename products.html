@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<script>
+    var products = new Array();
+    var prices= new Array();
+    function addToCart(name, price) {
+        // Increment the cart count
+        products.push(name)
+        prices.push(price)
+        document.getElementById("cart-count").innerText = parseInt(document.getElementById("cart-count").innerText) + 1
+        localStorage.setItem("names", products);
+        localStorage.setItem("prices", prices);
+    }
+</script>
+<body>
+    <header class="navbar">
+        <h1>My Groceries</h1>
+
+        <div class="nav-links" id="navLinks">
+            <a href="profile.html">
+                <img src="icons/user.svg">
+                <span class="page">Profile</span>
+            </a>
+            <a href="products.html">
+                <img src="icons/store-alt.svg">
+                <span class="page">Products</span>
+            </a>
+            <a href="cart.html">
+                <div id="cart">
+                    <img src="icons/shopping-cart.svg">
+                    <p id="cart-count">0</p>
+                </div> 
+                <span class="page">Cart</span>
+            </a>
+        </div>
+    </header>
+
+    <main class="content">
+        <p id="current-diet">Your Current Diet:</p>
+        <section id="products">
+        </section>
+        <script src="scripts/products.js"></script>
+    </main>
+    
+
+</body>
+</html>
